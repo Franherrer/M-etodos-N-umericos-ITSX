@@ -1,4 +1,4 @@
-package Ecuaciones_lineales;
+package Ecuaciones_Lineales;
 
 public class defmatrizz {
 

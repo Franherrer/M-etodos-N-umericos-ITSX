@@ -1,20 +1,15 @@
-package Ecuaciones_lineales;
+package Ecuaciones_Lineales;
+
 public class Lanzador_gaus {
     public static void main(String[] args) {
         // 1. Mandamos llamar a la función que nos entrega la matriz aumentada [A | b]
-
         double[][] matriz = defmatrizz.defmatriz();
-        // 2. Aplicar la eliminación gaussiana (fase de triangulación superior)
-        // Convierte los elementos debajo de la diagonal principal en ceros.
-        Gauss.eliminacionGaussiana(matriz);
 
-        // 3. Obtener los resultados mediante sustitución regresiva (la bajada)
-        // Despeja las incógnitas de abajo hacia arriba a partir de la matriz triangular.
+        // 2. Resolver utilizando la nueva clase modular Gauss-Jordan
+        double[] soluciones = Gauss_Jordan.resolver(matriz);
 
-        double[] soluciones = Gauss.sustitucionRegresiva(matriz);
-
-        // 4. Imprimir resultados finales en consola de manera limpia
-        System.out.println("Soluciones del sistema:");
+        // 3. Imprimir resultados finales en consola de manera limpia
+        System.out.println("Soluciones del sistema (Gauss-Jordan Modular):");
         for (int i = 0; i < soluciones.length; i++) {
             System.out.println("x" + (i + 1) + " = " + soluciones[i]);
         }
